@@ -78,7 +78,7 @@ if __name__ == '__main__':
     filename = args.inputFile
     f = open(filename, 'r')
     
-    print "[+] Analysing '" + args.inputFile + "'"
+    print ("[+] Analysing '" + args.inputFile + "'")
     
     lines = f.readlines()
     for line in lines:
@@ -245,10 +245,10 @@ if __name__ == '__main__':
     # Print results
     out = open(filename.split('.')[0] + '-stats.txt', 'w')
 
-    print '\n===' + blue + ' RESULTS ' + normal + '==='
+    print ('\n===' + blue + ' RESULTS ' + normal + '===')
     out.write('=== RESULTS ===\n')
 
-    print 'File = ' + purple + str(filename) + normal
+    print ('File = ' + purple + str(filename) + normal)
     out.write('File = ' + str(filename) + '\n')
 
     print ('Longest word = ' + purple + str(word_stats['longest_word']) + normal +
@@ -276,7 +276,7 @@ if __name__ == '__main__':
 
     ##############################################################################
 
-    print '\n===' + blue + ' Commonest words ' + normal + '==='
+    print ('\n===' + blue + ' Commonest words ' + normal + '===')
     out.write('\n=== Commonest words ===\n')
 
     limit = 50
@@ -295,7 +295,7 @@ if __name__ == '__main__':
 
     ##############################################################################
 
-    print '\n===' + blue + ' Commonest word-pairs ' + normal + '==='
+    print ('\n===' + blue + ' Commonest word-pairs ' + normal + '===')
     out.write('\n=== Commonest word-pairs ===\n')
 
     limit = 50
@@ -314,7 +314,7 @@ if __name__ == '__main__':
 
     ##############################################################################
 
-    print '\n===' + blue + ' Commonest word-triplets ' + normal + '==='
+    print ('\n===' + blue + ' Commonest word-triplets ' + normal + '===')
     out.write('\n=== Commonest word-triplets ===\n')
 
     limit = 50
@@ -333,7 +333,7 @@ if __name__ == '__main__':
 
     ##############################################################################
 
-    print '\n===' + blue + ' Commonest word-quads ' + normal + '==='
+    print ('\n===' + blue + ' Commonest word-quads ' + normal + '===')
     out.write('\n=== Commonest word-quads ===\n')
 
     limit = 50
@@ -354,9 +354,10 @@ if __name__ == '__main__':
 
     total_dev = 0.0
 
-    print '\n===' + blue + ' FREQUENCY ANALYSIS ' + normal + '==='
+    print ('\n===' + blue + ' FREQUENCY ANALYSIS ' + normal + '===')
     out.write('\n=== FREQUENCY ANALYSIS ===\n')
-    for char in sorted(word_stats['char_percentages'].iterkeys()):
+###    for char in sorted(word_stats['char_percentages'].iterkeys()):
+    for char in sorted(word_stats['char_percentages'].keys()):
         bar = ''
         perc = word_stats['char_percentages'][char]
 
@@ -384,5 +385,5 @@ if __name__ == '__main__':
 
     ##############################################################################
 
-    print '\nWritten results to ' + filename.split('.')[0] + '-stats.txt\n'
+    print ('\nWritten results to ' + filename.split('.')[0] + '-stats.txt\n')
     out.close()
